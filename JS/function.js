@@ -1,11 +1,11 @@
 function shuffleSyllableList(pSyllableList) {
     correctWord = pSyllableList.slice()
-    randomized = pSyllableList.sort(() => Math.random() - Math.random())
-    createUI(randomized)
+    mixSylbList = pSyllableList.sort(() => Math.random() - Math.random())
+    createUI(mixSylbList)
 }
 
-function createUI(pRandomized) {
-    dragList.innerHTML = addSyllables(pRandomized);
+function createUI(pMixSylbList) {
+    dragList.innerHTML = addSyllables(pMixSylbList);
     buttons.innerHTML = createButtons();
 }
 
@@ -20,7 +20,7 @@ document.addEventListener("click", (e) => {
 
 document.addEventListener("click", (e) => {
     if (e.target.id === "check") {
-        if (randomized.join("") === correctWord.join("")) {
+        if (mixSylbList.join("") === correctWord.join("")) {
             //alert("Dogru");
             dragList.style.backgroundColor = "green";
         } else {

@@ -4,7 +4,7 @@ const buttons = document.querySelector("#buttons");
 const container = document.querySelector("#container");
 
 
-let correctWord, randomized, dragging, draggedOver, syllablesList;
+let correctWord, mixSylbList, dragging, draggedOver;
 
 let words = [{
     name: "BILGISAYAR",

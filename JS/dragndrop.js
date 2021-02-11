@@ -27,10 +27,10 @@ function setDrop() {
 
 
 let dropped = () => {
-    let indexDragging = randomized.indexOf(dragging)
-    let indexDragOver = randomized.indexOf(draggedOver)
-    randomized.splice(indexDragging, 1)
-    randomized.splice(indexDragOver, 0, dragging)
-    createUI(randomized)
+    let indexDragging = mixSylbList.indexOf(dragging)
+    let indexDragOver = mixSylbList.indexOf(draggedOver)
+    mixSylbList.splice(indexDragging, 1)
+    mixSylbList.splice(indexDragOver, 0, dragging)
+    createUI(mixSylbList)
 }
 
