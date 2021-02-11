@@ -1,3 +1,6 @@
+/**
+ * Sürüklenecek elemana ilk kez tiklandiginda elemanin IDsini alir ve degiskene atar
+ */
 function setDragStart() {
 document.addEventListener("drag", (e) => {
     if (e.target.className === "drag-item") {
@@ -6,7 +9,9 @@ document.addEventListener("drag", (e) => {
     }
 });
 }
-
+/**
+ * Sürüklenenen elemanin birakilacagi alanda bulunan elemanin IDsini alir ve degiskene atar 
+ */
 function setDragOver() {
 document.addEventListener("dragover", (e) => {
     if (e.target.className === "drag-item") {
@@ -15,7 +20,9 @@ document.addEventListener("dragover", (e) => {
     }
 }) 
 }
-
+/**
+ * drop fonksiyonunun tetiklenmesini saglar
+ */
 function setDrop() {
     document.addEventListener("drop", (e) => {
     if (e.target.className === "drag-item") {
@@ -25,12 +32,14 @@ function setDrop() {
 })
 }
 
-
+/**
+ * birakilan hecenin birakildigi bölgeye girmesini, birakilan bölgedeki hecenin ise kaydirilmasini saglar
+ */
 let dropped = () => {
     let indexDragging = mixSylbList.indexOf(dragging)
     let indexDragOver = mixSylbList.indexOf(draggedOver)
     mixSylbList.splice(indexDragging, 1)
-    mixSylbList.splice(indexDragOver, 0, dragging)
+    mixSylbList.splice(indexDragOver, 0 , dragging)
     createUI(mixSylbList)
 }
 
